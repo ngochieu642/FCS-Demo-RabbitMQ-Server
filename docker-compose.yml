@@ -1,0 +1,38 @@
+version: "3.4"
+services:
+  elek_rabbit:
+    build:
+      context: .
+      args:
+        - BUILD_ENV=${BUILD_ENV}
+    #  image: 148078527676.dkr.ecr.ap-southeast-1.amazonaws.com/sip-rabbit:3.0.1
+    container_name: fcs-rabbitmq
+    networks:
+      - elek-network
+    ports:
+      - "1883:1883"
+      - "4369:4369"
+      - "5671:5671"
+      - "5672:5672"
+      - "15672:15672"
+      - "25672:25672"
+      - "35197:35197"
+      - "15675:15675"
+    environment:
+      - RABBITMQ_USE_LONGNAME=true
+      # - RABBITMQ_DEFAULT_USER=rabbit
+      # - RABBITMQ_DEFAULT_PASS=rabbitpass
+
+    volumes:
+      - ${PWD}/./data/rabbit/lib/rabbitmq:/var/lib/rabbitmq/mnesia
+      - ${PWD}/./data/rabbit/log/rabbitmq:/var/log/rabbitmq
+      # GandiStandardSSLCA2.pem Expires: Thursday, September 12, 2024 at 06:59:59 Indochina Time
+      - ${PWD}/./mnt/fcs/nginx/ssl/GandiStandardSSLCA2.pem:/etc/ssl/certs/cacert.pem
+      - ${PWD}/./mnt/fcs/nginx/ssl/smartec_cert.pem:/etc/ssl/certs/smartec_cert.pem
+      - ${PWD}/./mnt/fcs/nginx/ssl/smartec_key.pem:/etc/ssl/certs/smartec_key.pem
+    # command: "tail -f /dev/null"
+networks:
+  elek-network:
+    driver: bridge
+    external:
+      name: fcs-network

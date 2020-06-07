@@ -1,0 +1,364 @@
+{
+  "rabbit_version": "3.7.17",
+  "users": [
+    {
+      "name": "longthanh",
+      "password_hash": "iHCaISQmDWmQqe/9wU9aNvUVpEtjZgsy1Oj71vMEc9hetReo",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "customer"
+    },
+    {
+      "name": "api_prod",
+      "password_hash": "USAKJmLzRqCP1sMyPHXef17c26oK/eVRN+rShgS0QNtX76Xx",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "api product"
+    },
+    {
+      "name": "web_monitor",
+      "password_hash": "khKc1px1YlDVlscaFI7I8ZBUhs6WpOZz6CK1YPHtmrTrH3n2",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    },
+    {
+      "name": "gateway_dev",
+      "password_hash": "vGRrLAaGRWJJh+o/wrfpb1Hadx52Tr6e5UanEBT8/4EmIj3u",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": ""
+    },
+    {
+      "name": "prod-node_aws",
+      "password_hash": "utJqavuZIGCidV5iUM+2Qs6Ap6zQh0zsnnjnrGfbar0j91CI",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "aws"
+    },
+    {
+      "name": "rabbit",
+      "password_hash": "uK23C2c9kNMIhbR+uM3etm0EKbvAGG8bbnFoFEqWOI3DByJ/",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    },
+    {
+      "name": "gateway_prod",
+      "password_hash": "oEfNPbg+UFQgdZv7Uwd9KqSFqv2KQqQ6CSPb4v2cRHMvRcgp",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "default gateway prod"
+    },
+    {
+      "name": "root",
+      "password_hash": "QxuQ1d9awKuktFpqfBJG3aJr2J93Pnc/q/HKFgzMLLi9PXSt",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "administrator"
+    },
+    {
+      "name": "boho",
+      "password_hash": "ckIzkG9sWgObntKoVWotWzTGXE9tWjNJW0K63LpoZbYIen2a",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": "customer"
+    }
+  ],
+  "vhosts": [
+    { "name": "/" },
+    { "name": "prod" },
+    { "name": "fdev" },
+    { "name": "dev" },
+    { "name": "prod/agent" },
+    { "name": "prod/gateway" }
+  ],
+  "permissions": [
+    {
+      "user": "rabbit",
+      "vhost": "fdev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "rabbit",
+      "vhost": "prod/gateway",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "gateway_dev",
+      "vhost": "dev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "longthanh",
+      "vhost": "dev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "prod-node_aws",
+      "vhost": "prod/agent",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "api_prod",
+      "vhost": "prod/gateway",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "prod-node_aws",
+      "vhost": "prod/gateway",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "boho",
+      "vhost": "dev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "prod-node_aws",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "prod-node_aws",
+      "vhost": "prod",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "gateway_dev",
+      "vhost": "fdev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "gateway_prod",
+      "vhost": "prod/gateway",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "root",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "rabbit",
+      "vhost": "prod",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "rabbit",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "rabbit",
+      "vhost": "dev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "rabbit",
+      "vhost": "prod/agent",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "boho",
+      "vhost": "prod",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "root",
+      "vhost": "dev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "prod-node_aws",
+      "vhost": "fdev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "longthanh",
+      "vhost": "prod",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "prod-node_aws",
+      "vhost": "dev",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [
+    {
+      "user": "rabbit",
+      "vhost": "fdev",
+      "exchange": "amq.topic",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "gateway_dev",
+      "vhost": "fdev",
+      "exchange": "amq.topic",
+      "write": "^update.info.gateway.*",
+      "read": "^((ask.info)|(run.command)|(run.setting)).gateway.*"
+    },
+    {
+      "user": "longthanh",
+      "vhost": "prod",
+      "exchange": "amq.topic",
+      "write": ".cli_2451eeda-6783-499e-b19c-5975582d92fa",
+      "read": ".cli_2451eeda-6783-499e-b19c-5975582d92fa"
+    },
+    {
+      "user": "api_prod",
+      "vhost": "prod/gateway",
+      "exchange": "amq.topic",
+      "write": "^((ask.info)|(run.command)|(run.setting)).gateway.*",
+      "read": "update.info.gateway"
+    },
+    {
+      "user": "boho",
+      "vhost": "dev",
+      "exchange": "amq.topic",
+      "write": ".cli_27320269-2a12-480b-af15-e86f51f3ccc5",
+      "read": ".cli_27320269-2a12-480b-af15-e86f51f3ccc5"
+    },
+    {
+      "user": "gateway_prod",
+      "vhost": "prod/gateway",
+      "exchange": "amq.topic",
+      "write": "update.info.gateway.*\t",
+      "read": "^((ask.info)|(run.command)|(run.setting)).gateway.*"
+    },
+    {
+      "user": "longthanh",
+      "vhost": "dev",
+      "exchange": "amq.topic",
+      "write": ".cli_2451eeda-6783-499e-b19c-5975582d92fa",
+      "read": ".cli_2451eeda-6783-499e-b19c-5975582d92fa"
+    },
+    {
+      "user": "boho",
+      "vhost": "prod",
+      "exchange": "amq.topic",
+      "write": ".cli_27320269-2a12-480b-af15-e86f51f3ccc5",
+      "read": ".cli_27320269-2a12-480b-af15-e86f51f3ccc5"
+    },
+    {
+      "user": "gateway_dev",
+      "vhost": "dev",
+      "exchange": "amq.topic",
+      "write": "^update.info.gateway.*",
+      "read": "^((ask.info)|(run.command)|(run.setting)).gateway.*"
+    }
+  ],
+  "parameters": [],
+  "global_parameters": [
+    { "name": "cluster_name", "value": "rabbit@production.smarteciot.io" }
+  ],
+  "policies": [],
+  "queues": [
+    {
+      "name": "Consume_Messages_Ask_Info",
+      "vhost": "dev",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "exchanges": [
+    {
+      "name": "autoscripts",
+      "vhost": "prod",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    },
+    {
+      "name": "autoscripts",
+      "vhost": "dev",
+      "type": "topic",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "amq.topic",
+      "vhost": "dev",
+      "destination": "Consume_Messages_Ask_Info",
+      "destination_type": "queue",
+      "routing_key": "ask.info.gateway.simulator211019",
+      "arguments": {}
+    },
+    {
+      "source": "amq.topic",
+      "vhost": "dev",
+      "destination": "Consume_Messages_Ask_Info",
+      "destination_type": "queue",
+      "routing_key": "confirm.command.gateway.simulator211019",
+      "arguments": {}
+    },
+    {
+      "source": "amq.topic",
+      "vhost": "dev",
+      "destination": "Consume_Messages_Ask_Info",
+      "destination_type": "queue",
+      "routing_key": "confirm.setting.gateway.simulator211019",
+      "arguments": {}
+    },
+    {
+      "source": "amq.topic",
+      "vhost": "dev",
+      "destination": "Consume_Messages_Ask_Info",
+      "destination_type": "queue",
+      "routing_key": "run.command.gateway.simulator211019",
+      "arguments": {}
+    },
+    {
+      "source": "amq.topic",
+      "vhost": "dev",
+      "destination": "Consume_Messages_Ask_Info",
+      "destination_type": "queue",
+      "routing_key": "run.setting.gateway.simulator211019",
+      "arguments": {}
+    }
+  ]
+}

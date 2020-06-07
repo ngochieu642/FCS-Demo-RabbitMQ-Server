@@ -1,6 +1,6 @@
 version: "3.4"
 services:
-  elek_rabbit:
+  fcs_rabbit:
     build:
       context: .
       args:
@@ -8,7 +8,7 @@ services:
     #  image: 148078527676.dkr.ecr.ap-southeast-1.amazonaws.com/sip-rabbit:3.0.1
     container_name: fcs-rabbitmq
     networks:
-      - fcs-network
+      - dev-network
     ports:
       - "1883:1883"
       - "4369:4369"
@@ -32,7 +32,7 @@ services:
       - ${PWD}/./mnt/fcs/nginx/ssl/smartec_key.pem:/etc/ssl/certs/smartec_key.pem
     # command: "tail -f /dev/null"
 networks:
-  elek-network:
+  dev-network:
     driver: bridge
     external:
       name: fcs-network
